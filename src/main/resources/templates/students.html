@@ -11,25 +11,32 @@
 </head>
 
 <body>
+	<nav th:replace="fragments/header :: nav_bar"></nav>
 	<div class="container">
 		<div class="row">
-			<table class="table table-striped">
-				<thead class="table-dark">
-					<th>Student First Name</th>
-					<th>Student Last Name</th>
-					<th>Student Email</th>
-					<th>Actions</th>
-				</thead>
-
-				<tbody>
-					<tr th:each="student: ${students}">
-						<td th:text="${student.firstName}"></td>
-						<td th:text="${student.lastName}"></td>
-						<td th:text="${student.email}"></td>
-					</tr>
-				</tbody>
-			</table>
+			<h1>List Students</h1>
 		</div>
+		<div class= "row">
+			<div class="col-lg-3">
+				<a th:href ="@{/students/new)}" class= "btn btn-primaru btn-sm mb-3"> Add Student</a>
+			</div>
+		</div>
+		<table class="table table-striped">
+			<thead class="table-dark">
+				<th>Student First Name</th>
+				<th>Student Last Name</th>
+				<th>Student Email</th>
+				<th>Actions</th>
+			</thead>
+
+			<tbody>
+				<tr th:each="student: ${students}">
+					<td th:text="${student.firstName}"></td>
+					<td th:text="${student.lastName}"></td>
+					<td th:text="${student.email}"></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 </body>
